@@ -66,4 +66,4 @@
   reveal();
  }catch(err){console.error('[P40 Clean]',err); if(!outlet){reveal();return} const n=document.createElement('div');n.className='clean-page-error';n.innerHTML='<b>Runtime halaman gagal dimuat.</b><br><small>'+String(err.message||err)+'</small>';outlet.replaceChildren(n);reveal();}
 })();
-</script></body></html>
+</script><script>if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("ge-static-cache-sw.js").catch(console.warn));</script></body></html>
