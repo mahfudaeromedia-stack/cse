@@ -61,6 +61,48 @@ body.sidebar-collapsed .side .nav-label,body.sidebar-collapsed .sidebar .nav-lab
 .nav-link,.nav-item,.side-link { display:flex; align-items:center; gap:10px; min-height:40px; padding:10px 12px; border-radius:var(--ui-radius); color:inherit; }
 .nav-link.active,.nav-item.active,.side-link.active,[aria-current="page"] { background:rgba(255,255,255,.17); font-weight:600; }
 
+/* APP SHELL — single ownership for the generated portal header and sidebar */
+body.e1-page { min-height:100vh; background:var(--page-bg); }
+body.e1-page>.top { position:fixed; inset:0 0 auto; height:var(--header-height); min-height:0; background:var(--ui-navy); color:#fff; border:0; padding:10px 22px; display:flex; align-items:center; gap:18px; z-index:1000; }
+body.e1-page>.shell { display:flex; min-height:100vh; padding-top:var(--header-height); align-items:stretch; }
+body.e1-page>.shell>.side { position:fixed; top:var(--header-height); bottom:0; left:0; height:calc(100vh - var(--header-height)); min-height:0; display:flex; flex-direction:column; flex:0 0 var(--sidebar-width); width:var(--sidebar-width); background:#fff; color:var(--ui-text); border-right:1px solid var(--ui-border); padding:12px 9px 56px; overflow-y:auto; z-index:900; }
+body.e1-page>.shell>.main { display:block; flex:1; min-width:0; margin-left:var(--sidebar-width); padding:var(--page-gap); }
+body.e1-page>.footer { margin-left:var(--sidebar-width); background:var(--page-bg); }
+.ge-brand-logos { display:flex; align-items:center; gap:14px; flex:none; }
+.ge-brand-logos img { display:block; width:auto; max-width:170px; height:36px; object-fit:contain; }
+.ge-brand-logos .danantara { max-width:110px; height:32px; }
+.ge-title { display:flex; flex-direction:column; gap:1px; min-width:0; color:#fff; line-height:1.25; }
+.ge-title strong { font-size:15px; letter-spacing:.05em; white-space:nowrap; }
+.ge-title span { font-size:11px; color:#d4e3f5; }
+.ge-session { margin-left:auto; display:flex; align-items:center; gap:12px; min-width:0; }
+.ge-session .filter { display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; }
+.ge-session select { min-width:90px; height:34px; padding:4px 9px; color:var(--ui-navy); background:#fff; border-radius:6px; border:1px solid #b9cde1; }
+.ge-top-action,.ge-iconbtn,.ge-user-menu-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:36px; background:transparent; color:#fff; border:1px solid transparent; border-radius:8px; padding:6px 9px; }
+.ge-top-action:hover,.ge-iconbtn:hover,.ge-user-menu-btn:hover { background:rgba(255,255,255,.13); }
+.ge-session .ge-user-pop,.ge-session .ge-notify-pop { position:absolute; top:calc(100% - 4px); right:16px; z-index:1200; background:#fff; color:var(--ui-text); border:1px solid var(--ui-border); border-radius:12px; box-shadow:var(--ui-shadow); min-width:240px; padding:12px; }
+.ge-session .ge-user-pop:not(.open),.ge-session .ge-notify-pop:not(.open) { display:none; }
+.ge-nav-section { padding:16px 11px 6px; font-size:10px; font-weight:750; letter-spacing:.06em; color:#7389a1; text-transform:uppercase; flex:none; }
+.ge-nav-link { display:flex; flex:none; align-items:center; gap:10px; width:100%; min-height:39px; padding:9px 11px; border-radius:8px; color:var(--ui-text); font-size:12.5px; line-height:1.3; font-weight:500; text-decoration:none; }
+.ge-nav-link svg { width:17px; height:17px; flex:none; }
+.ge-nav-link span { min-width:0; }
+.ge-nav-link:hover { color:var(--ui-navy); background:#edf3fa; text-decoration:none; }
+.ge-nav-link.active,.ge-nav-link[aria-current="page"] { background:#dce9fa; color:var(--ui-navy); font-weight:700; }
+.ge-nav-sub { padding-left:20px; }
+.ge-sidebar-toggle { position:sticky; bottom:-56px; margin-top:auto; min-height:40px; width:100%; background:#fff; border:1px solid var(--ui-border); border-radius:8px; color:var(--ui-navy); font-size:12px; z-index:2; }
+.ge-sidebar-toggle:hover { background:#edf3fa; }
+body.sidebar-collapsed { --sidebar-width:64px; }
+body.sidebar-collapsed .ge-nav-link { justify-content:center; padding-inline:4px; }
+body.sidebar-collapsed .ge-nav-link span,body.sidebar-collapsed .ge-nav-section,body.sidebar-collapsed .ge-sidebar-toggle .toggle-label { display:none; }
+body.sidebar-collapsed .ge-sidebar-toggle { font-size:16px; }
+.mobile-nav-trigger-v233 { display:none; }
+.ge-planning-tabs { display:flex; gap:8px; flex-wrap:wrap; margin:14px 0; border-bottom:1px solid var(--ui-border); }
+.ge-planning-tabs a { padding:9px 13px; color:var(--ui-text); border-bottom:2px solid transparent; }
+.ge-planning-tabs a.active { border-color:var(--ui-navy); color:var(--ui-navy); font-weight:700; }
+.clean-page-loading,.clean-page-error { padding:24px; background:#fff; border:1px solid var(--ui-border); border-radius:12px; }
+.back-to-top { position:fixed; right:20px; bottom:20px; z-index:100; border-radius:50%; background:var(--ui-navy); color:#fff; border:0; width:40px; height:40px; }
+@media (max-width:1000px) { .ge-brand-logos .danantara { display:none; } .ge-title strong { font-size:12px; } .ge-session { gap:5px; } }
+@media (max-width:720px) { body.e1-page>.top { padding:8px 12px; gap:8px; } .mobile-nav-trigger-v233 { display:inline-flex; } .ge-brand-logos img { max-width:105px; height:28px; } .ge-title { display:none; } .ge-session .filter { display:none; } body.e1-page>.shell>.side { transform:translateX(-100%); transition:transform .18s ease; width:240px; } body.nav-open.e1-page>.shell>.side { transform:translateX(0); } body.e1-page>.shell>.main,body.e1-page>.footer { margin-left:0; } body.sidebar-collapsed .ge-nav-link span,body.sidebar-collapsed .ge-nav-section { display:initial; } }
+
 /* 04 — GLOBAL COMPONENTS */
 /* Ownership: button, surface, navigation tabs, feedback, overlay.
    Page code may use legacy class names; these aliases share ONE rule. */
