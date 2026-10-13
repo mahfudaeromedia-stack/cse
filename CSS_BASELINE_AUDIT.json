@@ -1,0 +1,137 @@
+{
+  "source_rules": 4847,
+  "canonical_selectors_in_context": 4395,
+  "duplicate_rules_eliminated": 452,
+  "important_declarations_retained_from_reference": 0,
+  "contexts": {
+    "()": {
+      "before": 4246,
+      "after": 3823
+    },
+    "(('media', '(max-width:1000px)'),)": {
+      "before": 6,
+      "after": 6
+    },
+    "(('media', '(max-width:760px)'),)": {
+      "before": 136,
+      "after": 122
+    },
+    "(('media', '(max-width:1180px)'),)": {
+      "before": 17,
+      "after": 17
+    },
+    "(('media', '(max-width:800px)'),)": {
+      "before": 13,
+      "after": 13
+    },
+    "(('media', '(max-width:1100px)'),)": {
+      "before": 90,
+      "after": 86
+    },
+    "(('media', '(max-width:720px)'),)": {
+      "before": 3,
+      "after": 3
+    },
+    "(('media', '(max-width:700px)'),)": {
+      "before": 55,
+      "after": 54
+    },
+    "(('media', '(max-width:900px)'),)": {
+      "before": 40,
+      "after": 40
+    },
+    "(('media', '(max-width:1050px)'),)": {
+      "before": 14,
+      "after": 14
+    },
+    "(('media', '(max-width:650px)'),)": {
+      "before": 24,
+      "after": 24
+    },
+    "(('media', '(max-width:680px)'),)": {
+      "before": 29,
+      "after": 29
+    },
+    "(('media', '(max-width:620px)'),)": {
+      "before": 10,
+      "after": 10
+    },
+    "(('media', '(min-width:761px)'),)": {
+      "before": 1,
+      "after": 1
+    },
+    "(('media', '(max-width:600px)'),)": {
+      "before": 10,
+      "after": 10
+    },
+    "(('media', '(max-width:960px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(max-width:1200px)'),)": {
+      "before": 10,
+      "after": 10
+    },
+    "(('media', '(max-width:1350px)'),)": {
+      "before": 1,
+      "after": 1
+    },
+    "(('media', '(min-width:1700px)'),)": {
+      "before": 3,
+      "after": 3
+    },
+    "(('media', '(max-width:850px)'),)": {
+      "before": 4,
+      "after": 4
+    },
+    "(('media', '(max-width:520px)'),)": {
+      "before": 1,
+      "after": 1
+    },
+    "(('media', '(max-width:560px)'),)": {
+      "before": 6,
+      "after": 6
+    },
+    "(('media', '(max-width:1080px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(max-width:820px)'),)": {
+      "before": 102,
+      "after": 92
+    },
+    "(('media', '(max-width:1280px)'),)": {
+      "before": 5,
+      "after": 5
+    },
+    "(('media', '(min-width:1450px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(prefers-reduced-motion:reduce)'),)": {
+      "before": 3,
+      "after": 3
+    },
+    "(('media', '(min-width:1400px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(max-width:1250px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(max-width:640px)'),)": {
+      "before": 5,
+      "after": 5
+    },
+    "(('media', '(max-width:950px)'),)": {
+      "before": 2,
+      "after": 2
+    },
+    "(('media', '(max-width:750px)'),)": {
+      "before": 1,
+      "after": 1
+    }
+  },
+  "lines": 24347
+}

@@ -1,0 +1,57 @@
+{
+  "source_files_merged": [
+    "portal.css",
+    "clean-shell.css",
+    "global-ui-canonical.css"
+  ],
+  "active_stylesheets": [
+    "assets/portal.css",
+    "assets/checklist-share.css (shared public checklist route only)"
+  ],
+  "renamed_runtime_files": {
+    "foundation-regression-v257.js": "foundation-regression.js",
+    "v257-touchpoint-final.js": "touchpoint-final.js",
+    "edition1-pages.css": "pages.css",
+    "edition1-overlay-manager.js": "overlay-manager.js",
+    "customer-experience-v257.js": "customer-experience.js",
+    "improvement-v257.js": "improvement.js",
+    "station-360-v257.js": "station-360.js",
+    "network-v257.js": "network.js",
+    "core-v257.js": "core.js",
+    "edition1-page-boot.js": "page-boot.js",
+    "edition1-store.js": "store.js",
+    "edition1-business-runtime.js": "business-runtime.js",
+    "agreement-v257.js": "agreement.js",
+    "v254-project.js": "project.js",
+    "management-outcome-v257.js": "management-outcome.js",
+    "service-location-v257.js": "service-location.js",
+    "compatibility-v257.js": "compatibility.js",
+    "edition1-files.js": "module-files.js",
+    "overlay-v30.js": "overlay.js",
+    "v2544-modal-fix.js": "modal-fix.js",
+    "budget-cost-v257.js": "budget-cost.js",
+    "shared-objects-v257.js": "shared-objects.js",
+    "permission-v257.js": "permission.js",
+    "page-identity-v28.js": "page-identity.js",
+    "publication-v257.js": "publication.js",
+    "v2554-stability.js": "stability.js",
+    "readiness-v257.js": "readiness.js",
+    "service-chain-v257.js": "service-chain.js",
+    "lounge-planning-v29.js": "lounge-planning.js",
+    "relationships-v257.js": "relationships.js",
+    "history-v257.js": "history.js",
+    "edition1-portal.js": "portal.js"
+  },
+  "selectors_unique": 3946,
+  "selector_occurrences": 4855,
+  "selectors_repeated_in_same_context": 452,
+  "media_queries": 171,
+  "important_count": 0,
+  "parse_errors": 0,
+  "status": "STRUCTURAL_CANDIDATE_NOT_GLOBAL_COMPONENT_REFACTOR",
+  "limitations": [
+    "452 repeated selector-context occurrences remain",
+    "No browser-based visual regression executed",
+    "Historical CSS declarations retained in cascade order"
+  ]
+}
