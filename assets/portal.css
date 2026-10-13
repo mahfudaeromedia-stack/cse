@@ -7,7 +7,7 @@
  --navy:#061f4e; --navy-hover:#123e76; --blue:#0864c7; --text:#092b58;
  --muted:#657f9c; --line:#d6e2ef; --surface:#fff; --canvas:#f3f7fc;
  --radius:12px; --radius-sm:8px; --shadow:0 2px 14px rgba(7,38,85,.055);
- --header-h:90px; --sidebar-w:270px; --control-h:38px;
+ --header-h:72px; --sidebar-w:216px; --control-h:36px;
  --font-ui:Inter,"Segoe UI",Arial,sans-serif;
  --ui-navy:var(--navy); --ui-blue:var(--blue); --ui-text:var(--text);
  --ui-muted:var(--muted); --ui-border:var(--line); --ui-surface:var(--surface);
@@ -33,20 +33,20 @@ h1{font-size:25px}h2{font-size:20px}h3{font-size:17px}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 /* 03 — APPLICATION SHELL — based on actual app.html and portal-shell.js */
 body.e1-page{min-height:100vh}
-body.e1-page>.top{height:var(--header-h);position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:22px;background:var(--navy);color:#fff;padding:0 24px;box-shadow:0 3px 9px rgba(0,25,60,.13)}
+body.e1-page>.top{height:var(--header-h);position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:0 16px;box-shadow:0 3px 9px rgba(0,25,60,.13)}
 body.e1-page>.shell{display:flex;min-height:calc(100vh - var(--header-h));align-items:stretch}
-body.e1-page>.shell>.side{position:sticky;top:var(--header-h);align-self:flex-start;flex:0 0 var(--sidebar-w);width:var(--sidebar-w);height:calc(100vh - var(--header-h));overflow:auto;background:#fff;border-right:1px solid var(--line);padding:4px 0 55px;scrollbar-width:thin;transition:width .18s,flex-basis .18s}
+body.e1-page>.shell>.side{position:sticky;top:var(--header-h);align-self:flex-start;flex:0 0 var(--sidebar-w);width:var(--sidebar-w);height:calc(100vh - var(--header-h));overflow-y:auto;overflow-x:hidden;background:#fff;border-right:1px solid var(--line);padding:4px 0 48px;scrollbar-width:thin;transition:width .18s,flex-basis .18s}
 body.e1-page>.shell>.main{flex:1;min-width:0;padding:36px 26px 44px;background:var(--canvas)}
 body.e1-page>.footer{padding:14px 26px;text-align:center;color:var(--muted);background:var(--canvas);font-size:11px}
-.ge-brand-logos{flex:0 1 30%;display:flex;align-items:center;gap:18px;min-width:0;max-width:560px;border-right:1px solid rgba(255,255,255,.14);height:50px;padding-right:20px}
+.ge-brand-logos{flex:0 1 26%;display:flex;align-items:center;gap:10px;min-width:0;max-width:365px;border-right:1px solid rgba(255,255,255,.14);height:42px;padding-right:12px}
 .ge-brand-logos img{width:auto;max-width:100%;object-fit:contain}
-.ge-brand-logos .garuda{height:44px;max-width:250px}
-.ge-brand-logos .danantara{height:33px;max-width:135px}
+.ge-brand-logos .garuda{height:32px;max-width:174px}
+.ge-brand-logos .danantara{height:25px;max-width:105px}
 .ge-title{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.25}
-.ge-title strong{font-size:clamp(18px,1.55vw,27px);letter-spacing:.01em;font-weight:800;white-space:nowrap}
-.ge-title>span{font-size:14px;color:#e0e8f6;margin-top:5px}
-.ge-session{display:flex;align-items:center;justify-content:flex-end;gap:16px;flex:0 0 auto;position:relative}
-.ge-session .filter{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #637a9b;border-radius:10px;color:#fff;min-width:160px;font-size:12px}
+.ge-title strong{font-size:clamp(16px,1.15vw,21px);letter-spacing:.01em;font-weight:800;white-space:nowrap}
+.ge-title>span{font-size:11px;color:#e0e8f6;margin-top:2px}
+.ge-session{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex:0 0 auto;position:relative}
+.ge-session .filter{display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid #637a9b;border-radius:10px;color:#fff;min-width:120px;font-size:11px}
 .ge-session .filter select{min-width:70px;color:#fff;border:0;background:transparent;font-weight:700;outline:0}
 .ge-session .filter option{color:var(--text)}
 .ge-top-action{display:grid;place-items:center;width:32px;height:36px;background:transparent;border:0;color:#fff;font-weight:700;font-size:20px;position:relative;padding:0}
@@ -54,7 +54,7 @@ body.e1-page>.footer{padding:14px 26px;text-align:center;color:var(--muted);back
 .bell-shape{width:16px;height:18px;border:2px solid currentColor;border-radius:9px 9px 3px 3px;display:block;position:relative}
 .bell-shape:after{content:"";position:absolute;bottom:-6px;left:5px;width:4px;height:3px;border-radius:50%;background:currentColor}
 .ge-user-menu{display:flex;align-items:center;gap:10px;border:0;background:transparent;color:#fff;padding:0;text-align:left}
-.ge-user-menu .avatar{width:45px;height:45px;border:1px solid #8eb3e3;border-radius:50%;display:grid;place-items:center;background:#24588d;font-weight:700}
+.ge-user-menu .avatar{width:36px;height:36px;border:1px solid #8eb3e3;border-radius:50%;display:grid;place-items:center;background:#24588d;font-weight:700}
 .ge-user-menu .who{display:flex;flex-direction:column;min-width:90px;font-size:12px}
 .ge-user-menu .who span{font-size:10px;color:#dbe5f4}
 .ge-user-pop,.ge-notify-pop{display:none;position:absolute;right:0;top:calc(100% + 15px);z-index:300;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 40px #061f4e30;min-width:220px;padding:8px}
@@ -67,15 +67,15 @@ body.e1-page>.footer{padding:14px 26px;text-align:center;color:var(--muted);back
 .ge-notify-item:hover{background:#f1f6fd}
 .mobile-nav-trigger-v233{display:none}
 /* Sidebar: exact classes generated by portal-shell.js; collapse state controlled by JS */
-.ge-nav-section{padding:23px 15px 10px;font-size:11px;font-weight:800;line-height:1.25;letter-spacing:.075em;color:#607d9b;text-transform:uppercase}
-.ge-nav-link{display:flex;align-items:center;gap:14px;min-height:46px;padding:9px 12px;margin:2px 14px 2px 0;color:var(--text);font-weight:600;font-size:13px;line-height:1.25;border:1px solid transparent;border-radius:0 9px 9px 0;transition:background .16s,border-color .16s}
+.ge-nav-section{padding:15px 12px 6px;font-size:10px;font-weight:800;line-height:1.25;letter-spacing:.075em;color:#607d9b;text-transform:uppercase}
+.ge-nav-link{display:flex;align-items:center;gap:10px;min-height:39px;padding:7px 9px;margin:2px 9px 2px 0;color:var(--text);font-weight:600;font-size:12px;line-height:1.25;border:1px solid transparent;border-radius:0 9px 9px 0;transition:background .16s,border-color .16s}
 .ge-nav-link:hover{background:#eff5fb;color:var(--navy)}
 .ge-nav-link.active{background:#e5edf7;border-color:#c0d2e6;border-left:2px solid var(--blue);color:var(--navy);font-weight:800}
-.ge-nav-link .ni{flex:0 0 20px;width:20px;height:20px;display:grid;place-items:center;color:#326b98}
-.ge-nav-link .ni svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ge-nav-link .ni{flex:0 0 18px;width:18px;height:18px;display:grid;place-items:center;color:#326b98}
+.ge-nav-link .ni svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ge-nav-sub{padding-left:12px}
 .ge-airport-parent{padding-top:18px}
-.ge-sidebar-toggle{position:fixed;bottom:0;left:0;width:var(--sidebar-w);height:48px;z-index:150;border:0;border-top:1px solid var(--line);border-radius:0;background:#fff;color:#336c99;display:flex;align-items:center;gap:9px;padding:0 20px;text-align:left;font-size:12px;transition:width .18s}
+.ge-sidebar-toggle{position:sticky;bottom:0;left:0;width:100%;height:44px;z-index:10;border:0;border-top:1px solid var(--line);border-radius:0;background:#fff;color:#336c99;display:flex;align-items:center;gap:9px;padding:0 20px;text-align:left;font-size:12px;transition:width .18s}
 .ge-sidebar-toggle:hover{background:#eef4fb}
 .ge-sidebar-toggle .toggle-arrow{font-size:19px}
 body.sidebar-collapsed{--sidebar-w:66px}
@@ -119,6 +119,13 @@ button.active,button[aria-pressed="true"],.btn.active,.ge-btn.active,.tab-btn.ac
 .toast,.notification-toast{position:fixed;right:18px;bottom:18px;z-index:1200;background:var(--navy);color:#fff;border-radius:9px;padding:12px 16px}
 .back-to-top{position:fixed;bottom:22px;right:22px;width:42px;height:42px;border-radius:50%}
 .clean-page-loading,.clean-page-error{padding:32px;background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--text)}
+/* Shared action cells: preserve Edit/Delete controls across every data table */
+:is(td,th):last-child:has(button), :is(td,th):last-child:has(.btn){white-space:nowrap}
+:is(td,th) .actions, :is(td,th) .row-actions, :is(td,th) .action-buttons{display:inline-flex;align-items:center;gap:6px;flex-wrap:nowrap}
+:is(td,th) button, :is(td,th) .btn{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:5px 9px;font-size:12px}
+/* Action column — shared presentation, no hidden edit/delete */
+td :is(.edit-btn,.delete-btn,.action-edit,.action-delete,.btn-edit,.btn-delete){display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:30px;padding:5px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--navy);font-size:12px;white-space:nowrap}
+td :is(.edit-btn,.delete-btn,.action-edit,.action-delete,.btn-edit,.btn-delete):hover{background:var(--navy);border-color:var(--navy);color:#fff}
 /* 05 — FORMS */
 .formgrid,.form-grid,.ge-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .form-group,.field,.ge-field{display:flex;flex-direction:column;gap:6px;min-width:0}
@@ -136,6 +143,15 @@ th{background:#f0f5fb;color:var(--navy);font-size:12px;font-weight:800;white-spa
 tbody tr:hover{background:#f8fbff}
 .table-actions,.row-actions{display:flex;gap:6px;align-items:center}
 /* 07 — PAGE: DASHBOARD */
+/* Dashboard — metrics, management attention, customer trend, decision */
+#dashboardRoot .ge-dash-panel{display:flex;flex-direction:column;min-width:0;min-height:280px}
+#dashboardRoot .ge-dash-panel>.ge-dash-head{flex:0 0 auto}
+#dashboardRoot .ge-dash-panel :is(.ge-dash-list,.ge-dash-list-scroll,.ge-attention-list){min-height:0;max-height:420px;overflow-y:auto;scrollbar-width:thin}
+#dashboardRoot :is(.ge-dash-metric,.ge-dash-stat,.ge-dash-kpi){min-width:0}
+#dashboardRoot :is(.ge-dash-metric,.ge-dash-kpi) b{font-variant-numeric:tabular-nums}
+#dashboardRoot :is(.ge-dash-chart,.ge-dash-trend){width:100%;min-width:0;overflow:hidden}
+#dashboardRoot :is(.ge-dash-chart,.ge-dash-trend) svg{display:block;width:100%;height:auto}
+
 #dashboardRoot{min-width:0}
 .ge-dash-eyebrow{font-size:11px;font-weight:800;letter-spacing:.085em;color:#607d9b;text-transform:uppercase}
 .ge-dash-kpis{grid-template-columns:repeat(7,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff;margin:10px 0 14px}
@@ -149,31 +165,91 @@ tbody tr:hover{background:#f8fbff}
 .ge-dash-list-row:last-child{border-bottom:0}
 .ge-dash-context{font-size:12px}
 /* 07 — PAGE: CUSTOMER EXPERIENCE */
+/* Customer Experience — CSI/NPS and touchpoint cards */
+:is(.ge-cx-grid,.cx-grid)>.ge-card{min-width:0}
+:is(.ge-cx-summary,.cx-summary) :is(strong,b){font-variant-numeric:tabular-nums}
+:is(.cx-filter,.ge-cx-filter,.cx-toolbar){display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+:is(.cx-chart,.ge-cx-chart,.touchpoint-chart){min-width:0;overflow:auto}
+
 .ge-cx-grid,.cx-grid,.ge-cx-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .ge-cx-card,.cx-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
 /* 07 — PAGE: AIRPORT EXPERIENCE / NETWORK / STATION 360 */
+/* Airport network, station detail, map and capability */
+:is(.r43-service-matrix,.r43-four-layer,.r43-kpi-grid){display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:16px}
+:is(.r43-service-matrix,.r43-four-layer,.r43-kpi-grid)>article{min-width:0;padding:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.r43-journey,.r43-builder-flow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.r43-journey>span,.r43-builder-flow>span{padding:8px 12px;background:#f0f5fb;border:1px solid var(--line);border-radius:8px;font-size:12px}
+:is(.ge-station-row,.network-row){cursor:pointer}
+:is(.map-toolbar,.ge-map-toolbar){display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
 #interactiveMap,.ge-map,.airport-map,.network-map{min-height:380px;max-width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#e9f0f7}
 .ge-station-grid,.ge-capability-grid,.ge-network-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 /* 07 — PAGE: READINESS / STANDARDS / MONITORING */
+/* Monitoring, checklist builder, readiness and assessment */
+.r43-foundation-page{display:grid;gap:14px;min-width:0}
+.r43-foundation-page>.ge-page-head{margin-bottom:0}
+.r43-builder{min-width:0}
+.r43-builder-flow i{color:var(--muted);font-style:normal}
+:is(.ge-form-builder,.form-builder)>*{min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+:is(.assessment-list,.checklist-list,.standard-list){min-width:0;overflow:auto}
+
 .ge-assess-card,.ge-monitoring-card,.ge-standard-card{padding:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
 .ge-assess-head,.ge-assess-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .ge-form-builder,.form-builder{display:grid;grid-template-columns:minmax(170px,1fr) minmax(350px,2fr) minmax(200px,1fr);gap:14px}
 /* 07 — PAGE: INITIATIVE / IMPROVEMENT */
+/* Initiative cards, milestone list and editor */
+:is(.initiative-card,.ge-initiative-card,.ge-project-card){display:flex;flex-direction:column;gap:10px;min-width:0}
+:is(.initiative-card,.ge-initiative-card,.ge-project-card) :is(h3,h4){margin:0;font-size:14px;line-height:1.35}
+:is(.initiative-card,.ge-initiative-card,.ge-project-card) :is(.actions,.card-actions){margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+:is(.milestone-list,.initiative-timeline,.project-timeline){min-width:0;overflow:auto}
+
 .ge-initiative-grid,.initiative-grid,.ge-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ge-initiative-card,.initiative-card,.ge-project-card{padding:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
 /* 07 — PAGE: CALENDAR / PROJECT TRACKING */
+/* Calendar and Gantt have compact independent typography */
+:is(.ge-calendar,.calendar-board,.ge-gantt,.gantt-board){font-size:12px}
+:is(.ge-calendar,.calendar-board,.ge-gantt,.gantt-board) :is(th,.day-name,.weekday){font-size:11px;font-weight:700}
+:is(.ge-calendar,.calendar-board,.ge-gantt,.gantt-board) :is(td,.calendar-day,.gantt-cell){font-size:11px}
+:is(.ge-calendar,.calendar-board) :is(.calendar-event,.event-chip,.cal-event){font-size:10px;line-height:1.3;overflow-wrap:anywhere}
+:is(.ge-gantt,.gantt-board) :is(.gantt-label,.gantt-bar,.gantt-task){font-size:11px}
+:is(.ge-gantt,.gantt-board) table{table-layout:auto;min-width:max-content}
+:is(.ge-calendar,.calendar-board) table{table-layout:fixed;min-width:650px}
+
 .ge-calendar,.calendar-board,.ge-gantt,.gantt-board{min-width:0;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
 .ge-cal-filters,.ge-cal-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 /* 07 — PAGE: BUDGET / COST INTELLIGENCE */
+/* Cost and budget summaries */
+:is(.ge-budget-grid,.ge-cost-grid,.budget-grid)>*{min-width:0}
+:is(.cost-chart,.budget-chart,.budget-trend){min-width:0;overflow:auto}
+:is(.cost-summary,.budget-summary) :is(b,strong){font-variant-numeric:tabular-nums}
+
 .ge-budget-grid,.ge-cost-grid,.budget-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 /* 07 — PAGE: DATA / ADMIN / MASTER DATA */
+/* Master Data remains on its working runtime, only shared presentation */
+:is(.master-data-page,.ge-master-data,.ge-admin-page){min-width:0}
+:is(.master-data-page,.ge-master-data,.ge-admin-page) :is(.filters,.filter-bar,.ge-filters){display:flex;gap:10px;flex-wrap:wrap;align-items:end}
+:is(.master-data-page,.ge-master-data,.ge-admin-page) :is(.filters,.filter-bar,.ge-filters)>*{min-width:140px}
+:is(.admin-section-tabs,.ge-admin-tabs) button{font-size:12px}
+
 .admin-section-tabs,.ge-admin-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .ge-data-error-r13{color:#b42318}
 /* 07 — PAGE: LOUNGE / TENANT / PLANNING DOCUMENTS */
+/* Planning domain cards and lounge/tenant tables */
+:is(.ge-lounge-grid,.ge-planning-grid,.planning-grid)>*{min-width:0}
+:is(.planning-domain-card,.planning-tile,.ge-planning-card){background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+:is(.ge-planning-tabs,.planning-tabs) a{font-size:12px}
+
 .ge-lounge-grid,.ge-planning-grid,.planning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ge-planning-tabs{margin-bottom:20px}
 /* 07 — PAGE: SUPPORT / PROFILE / NEWS */
+/* Support, profile and publication cards */
+:is(.ge-profile-grid,.ge-support-grid,.ge-news-grid)>*{min-width:0}
+:is(.ge-profile-grid,.ge-support-grid) :is(label,input,textarea){max-width:100%}
+
 .ge-profile-grid,.ge-support-grid,.ge-news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+/* Page-level responsiveness */
+@media(max-width:1100px){.ge-form-builder,.form-builder{grid-template-columns:1fr 1fr}.ge-dash-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.ge-form-builder,.form-builder,.ge-dash-grid,.ge-initiative-grid,.initiative-grid{grid-template-columns:1fr}.r43-service-matrix,.r43-four-layer,.r43-kpi-grid{grid-template-columns:1fr 1fr}}
 /* 08 — RESPONSIVE */
 @media(max-width:1400px){.ge-brand-logos{flex-basis:24%}.ge-dash-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}.ge-dash-kpis>*{border-bottom:1px solid var(--line)}}
 @media(max-width:1100px){.ge-title strong{font-size:18px}.ge-brand-logos .danantara{display:none}.ge-dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ge-initiative-grid,.initiative-grid,.ge-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
