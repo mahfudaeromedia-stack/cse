@@ -1,9 +1,1 @@
-/* Static assets only. Never cache HTML, API, authentication or Firestore responses. */
-const CACHE='ge-static-20261013-3';
-self.addEventListener('install',()=>self.skipWaiting());
-self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const k of await caches.keys())if(k.startsWith('ge-static-')&&k!==CACHE)await caches.delete(k);await self.clients.claim()})()));
-self.addEventListener('fetch',event=>{
- const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;
- const u=new URL(req.url);if(!u.pathname.startsWith('/assets/')||!(/\.(js|css|png|jpg|jpeg|svg|webp)$/i.test(u.pathname)))return;
- event.respondWith((async()=>{const c=await caches.open(CACHE),hit=await c.match(req);const refresh=fetch(req).then(async res=>{if(res.ok&&res.type==='basic')await c.put(req,res.clone());return res});if(hit){event.waitUntil(refresh.catch(()=>{}));return hit}return refresh})());
-});
+const CACHE='ge-assets-static-20261013';const STATIC=/\.(?:css|js|png|jpg|jpeg|webp|svg|woff2?)$/i;self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==self.location.origin||!STATIC.test(new URL(r.url).pathname))return;e.respondWith((async()=>{const cache=await caches.open(CACHE);const cached=await cache.match(r);const update=fetch(r).then(res=>{if(res.ok)cache.put(r,res.clone());return res}).catch(()=>cached);return cached||update})())});
