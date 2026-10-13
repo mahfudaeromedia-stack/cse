@@ -35,7 +35,7 @@ h1{font-size:25px}h2{font-size:20px}h3{font-size:17px}
 body.e1-page{min-height:100vh}
 body.e1-page>.top{height:var(--header-h);position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:0 16px;box-shadow:0 3px 9px rgba(0,25,60,.13)}
 body.e1-page>.shell{display:flex;min-height:calc(100vh - var(--header-h));align-items:stretch}
-body.e1-page>.shell>.side{position:sticky;top:var(--header-h);align-self:flex-start;flex:0 0 var(--sidebar-w);width:var(--sidebar-w);height:calc(100vh - var(--header-h));overflow-y:auto;overflow-x:hidden;background:#fff;border-right:1px solid var(--line);padding:4px 0 48px;scrollbar-width:thin;transition:width .18s,flex-basis .18s}
+body.e1-page>.shell>.side{position:sticky;top:var(--header-h);align-self:flex-start;flex:0 0 var(--sidebar-w);width:var(--sidebar-w);height:calc(100vh - var(--header-h));display:flex;flex-direction:column;overflow:hidden;background:#fff;border-right:1px solid var(--line);padding:0;scrollbar-width:thin;transition:width .18s,flex-basis .18s}
 body.e1-page>.shell>.main{flex:1;min-width:0;padding:26px 22px 42px;background:var(--canvas)}
 body.e1-page>.footer{padding:14px 26px;text-align:center;color:var(--muted);background:var(--canvas);font-size:11px}
 .ge-brand-logos{flex:0 1 26%;display:flex;align-items:center;gap:10px;min-width:0;max-width:330px;border-right:1px solid rgba(255,255,255,.14);height:42px;padding-right:12px}
@@ -78,7 +78,7 @@ body.e1-page>.footer{padding:14px 26px;text-align:center;color:var(--muted);back
 .ge-sidebar-toggle{position:relative;flex:0 0 46px;bottom:auto;left:auto;width:100%;height:46px;z-index:1;border:0;border-top:1px solid var(--line);border-radius:0;background:#fff;color:#336c99;display:flex;align-items:center;gap:9px;padding:0 20px;text-align:left;font-size:12px;transition:background .18s}
 .ge-sidebar-toggle:hover{background:#eef4fb}
 .ge-sidebar-toggle .toggle-arrow{font-size:19px}
-.ge-sidebar-scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin}
+.ge-sidebar-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;padding:4px 0 12px}.ge-sidebar-toggle{margin-top:auto;flex-shrink:0}
 body.sidebar-collapsed{--sidebar-w:66px}
 html.ge-precollapsed{--sidebar-w:66px}
 body.sidebar-collapsed .ge-nav-link,html.ge-precollapsed .ge-nav-link{justify-content:center;padding:11px 0;margin-right:5px}
@@ -360,3 +360,95 @@ tbody tr:hover{background:#f8fbff}
 @media(max-width:800px){body.e1-page>.top{height:70px;padding:0 12px;gap:10px}body.e1-page>.shell>.side{position:fixed;left:0;top:70px;bottom:0;height:calc(100vh - 70px);z-index:190;transform:translateX(-110%);width:270px;box-shadow:8px 0 22px #061f4e20}body.nav-open>.shell>.side{transform:translateX(0)}body.e1-page>.shell>.main{padding:18px 14px}.ge-brand-logos{flex:0 0 110px;border:0;padding:0}.ge-brand-logos .garuda{max-width:110px}.ge-title{align-items:flex-start;text-align:left}.ge-title strong{font-size:13px;white-space:normal}.ge-title>span{display:none}.ge-session .filter,.ge-user-menu .who,.ge-help{display:none}.ge-session{gap:8px}.ge-user-menu .avatar{width:32px;height:32px}.mobile-nav-trigger-v233{display:grid;place-items:center;width:35px;height:35px;background:transparent;color:#fff;border:0;font-size:23px}.ge-sidebar-toggle{display:none}.ge-dash-grid,.ge-dash-grid-3,.ge-dash-score-grid,.ge-budget-grid,.ge-cost-grid,.budget-grid,.ge-lounge-grid,.ge-planning-grid,.planning-grid{grid-template-columns:1fr}.ge-dash-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.formgrid,.form-grid,.ge-form-grid,.ge-cx-grid,.cx-grid,.ge-cx-summary,.ge-station-grid,.ge-capability-grid,.ge-network-grid,.ge-profile-grid,.ge-support-grid,.ge-news-grid,.ge-cal-filters,.ge-cal-detail-grid{grid-template-columns:1fr}.ge-form-builder,.form-builder{grid-template-columns:1fr}}
 @media(max-width:520px){.ge-brand-logos{display:none}.ge-title strong{font-size:15px}.ge-dash-kpis{grid-template-columns:1fr 1fr}.grid2,.grid3,.grid4,.stats,.ge-dash-kpis,.ge-initiative-grid,.initiative-grid,.ge-project-grid{grid-template-columns:1fr}.card,.ge-card,.ge-panel,.panel,.ge-dash-panel,.ge-dash-card,.dashboard-panel,.table-card,.widget,.stat,.ge-kpi,.ge-budget-tile{padding:14px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto;transition-duration:.01ms;animation-duration:.01ms}}
+
+/* 08 — ACTUAL PAGE COMPONENTS: styles mapped to runtime class names, not legacy CSS */
+/* Shared dashboard: network/management and super-admin */
+.ge-ref-dashboard,.ge-pov-dashboard{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ge-ref-kpis,.ge-dash-kpis,.ge-dash-score-grid,.ge-dash-count-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.ge-ref-kpis>* ,.ge-dash-kpis>*,.ge-dash-score-grid>*,.ge-dash-count-grid>*{padding:16px;min-width:0;border-right:1px solid var(--line)}
+.ge-dash-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ge-dash-grid-3,.sa-dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ge-dash-panel,.ge-ref-panel{min-width:0;overflow:hidden}
+.ge-dash-panel-head,.ge-ref-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.ge-dash-panel-head h2,.ge-ref-panel-head h2{margin:0;font-size:14px;text-transform:uppercase}
+.ge-dash-kpi,.ge-kpi,.ge-stat{display:flex;flex-direction:column;gap:5px}
+.ge-dash-kpi b,.ge-kpi strong,.ge-stat strong{font-size:23px;color:var(--navy);font-variant-numeric:tabular-nums}
+.ge-dash-list-row,.ge-ref-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:9px 0}
+.ge-dash-progress,.mini-progress{height:7px;overflow:hidden;background:#e7eef6;border-radius:10px}
+.ge-dash-progress>*,.mini-progress>*{height:100%;border-radius:inherit;background:#2773c5}
+.ge-ref-row-actions,.ge-ref-toolbar,.ge-dash-panel-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+/* Customer experience: source, publication and measurement */
+.ge-cx-measurement,.cx-measurement,.ge-cx-source,.cx-source{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.ge-cx-metrics,.cx-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:0;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.ge-cx-metrics>* ,.cx-metrics>*{padding:13px;border-right:1px solid var(--line)}
+.ge-cx-measurement .formgrid,.cx-measurement .formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+/* Airport network, map, markers and station profile */
+.airport-profile-list,.airport-detail-list-v244{display:grid;gap:0;min-width:0}
+.airport-detail-item-v244,.airport-profile-list>*{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}
+.airport-detail-chip-v244,.map-contract-mini{display:inline-flex;align-items:center;border:1px solid #9eb8d2;border-radius:7px;padding:6px 9px;background:#f8fbfe;font-size:11px;font-weight:700}
+.airport-detail-empty-v244,.map-admin-note-v217{padding:22px;color:var(--muted);text-align:center}
+.airport-marker{width:13px;height:13px;border:2px solid #fff;border-radius:50%;background:#2b6485;box-shadow:0 0 0 1px #2b6485,0 2px 5px #061f4e55;cursor:pointer}
+.tooltip-airport-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800}
+.tooltip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:10px}
+.tooltip-grid>*{background:#ffffff1a;padding:9px;border-radius:7px}
+/* Station 360 and capability */
+.ge-cap-filter,.ge-cap-toolbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.ge-cap-filter>*{flex:1;min-width:160px}
+.ge-cap-summary,.ge-cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+/* Initiative: cards, progress and milestones */
+.initiative-grid,.ge-initiative-grid{align-items:stretch}
+.initiative-card,.ge-initiative-card{border-radius:12px;box-shadow:var(--shadow);min-height:200px}
+.initiative-card .card-actions,.ge-initiative-card .card-actions{margin-top:auto}
+.due-badge,.planning-status{display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:99px;background:#edf4f7;font-size:11px;font-weight:700}
+.initiative-empty-v246{padding:28px;text-align:center;color:var(--muted)}
+/* Calendar — real markup from project tracking runtime */
+.calendar-grid-v251{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:11px}
+.cal-head-v251{padding:10px 6px;text-align:center;background:#f3f8fb;border-bottom:1px solid var(--line);font-size:11px;font-weight:700;color:#67809b}
+.calendar-week-r2{display:contents}
+.calendar-week-col-r2,.calendar-day-r2{min-height:110px;min-width:0;padding:7px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;font-size:11px}
+.calendar-day-r2{position:relative;display:flex;flex-direction:column;gap:4px}
+.cal-num-v251{font-size:12px;font-weight:700;color:var(--navy)}
+.cal-event-v251,.calendar-day-event-r2{display:block;padding:4px 5px;background:#eaf5f5;border-radius:5px;font-size:10px;line-height:1.3;overflow-wrap:anywhere;cursor:pointer}
+.calendar-agenda-item-r2{padding:9px 10px;border-radius:9px;background:#f0f8f9;border:1px solid #d6e8ea;font-size:11px;margin-bottom:6px}
+/* Project/Gantt — compact row typography, horizontal timeline scroll */
+.project-summary-card-v2532{background:#fff;border:1px solid #c7d8e9;border-radius:9px;padding:16px;min-width:0}
+.project-summary-card-v2532 strong{display:block;font-size:24px;font-weight:700;color:#276bc1}
+.gantt-grid,.gantt-timeline,.gantt-board{overflow-x:auto;max-width:100%;font-size:11px}
+.gantt-row,.gantt-header,.gantt-track{min-height:30px;border-bottom:1px solid #dce6ee;font-size:11px}
+.gantt-bar,.gantt-task{min-height:11px;border:1px solid #2b6385;background:#cfe3ee;border-radius:5px;font-size:10px}
+/* Planning workspace cards */
+.planning-grid,.ge-planning-grid{align-items:stretch}
+.planning-domain-card,.planning-tile,.ge-planning-card{display:flex;flex-direction:column;gap:9px;overflow:hidden;padding:0}
+.planning-domain-card img,.planning-tile img,.ge-planning-card img{display:block;width:100%;height:155px;object-fit:cover}
+.planning-domain-card h3,.planning-tile h3,.ge-planning-card h3{font-size:17px;line-height:1.3;margin:0}
+.planning-domain-card>*:not(img),.planning-tile>*:not(img),.ge-planning-card>*:not(img){margin-left:16px;margin-right:16px}
+.planning-domain-card>:last-child,.planning-tile>:last-child,.ge-planning-card>:last-child{margin-bottom:16px}
+/* Lounge/Tenant: actual card layout, price and agreement */
+.lounge-master-card-v237{display:flex;flex-direction:column;gap:12px;min-width:0;padding:20px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.lounge-master-card-top-v237{display:flex;align-items:flex-start;gap:14px}
+.lounge-master-code-v237{flex:0 0 72px;min-height:72px;display:grid;place-items:center;border-radius:15px;background:#123f72;color:#fff;font-size:23px;font-weight:800}
+.lounge-master-card-body-v237{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.lounge-master-card-body-v237 h3{margin:0;font-size:16px;line-height:1.35;color:var(--navy)}
+.lounge-type-pill-v237,.lounge-days-pill-v237{display:inline-flex;width:max-content;max-width:100%;border-radius:99px;padding:5px 10px;background:#e7f2f8;color:#285b8b;font-size:11px}
+.lounge-card-actions-v237{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto}
+.lounge-price-currency-card-v243,.ge-p29-price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--line);border-radius:8px}
+.lounge-price-currency-v243{font-weight:800;font-variant-numeric:tabular-nums}
+.lounge-price-empty-v243,.lounge-master-empty-v237{padding:22px;color:var(--muted);text-align:center}
+.contract-row-v246{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.contract-label-v246{flex:0 0 120px;color:var(--muted);font-size:11px}
+/* Global tables and actual action groups */
+.table-wrap,.ge-table-wrap,.table-scroll{width:100%;max-width:100%;overflow-x:auto;border-radius:10px}
+.table-wrap table,.ge-table-wrap table,.table-scroll table{width:100%;border-collapse:collapse;font-size:12px}
+.table-wrap th,.ge-table-wrap th,.table-scroll th{font-size:11px;white-space:nowrap;text-align:left;background:#f4f7fb;padding:11px 12px}
+.table-wrap td,.ge-table-wrap td,.table-scroll td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.row-actions,.visitor-actions,.ge-ref-row-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;white-space:nowrap}
+.row-actions button,.row-actions a{flex:0 0 auto}
+/* Forms and modal footer stay aligned */
+.formgrid,.p26-form-grid,.p27-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.formgrid>.span2,.p26-form-grid>.span2{grid-column:span 2}
+.p26-form-section,.p27-section,.ge-p29-price-section{padding:15px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:12px}
+.p26-section-kicker,.p27-eyebrow,.eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#607d9b}
+.p26-modal-actions,.ge-modal-actions,.modal-actions{gap:10px}
+/* Responsive per page */
+@media(max-width:1100px){.ge-dash-grid-3,.sa-dashboard-grid,.ge-initiative-grid,.initiative-grid,.ge-lounge-grid,.ge-planning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ge-cx-measurement .formgrid,.cx-measurement .formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.ge-dash-grid-3,.sa-dashboard-grid,.ge-dash-grid-2,.ge-initiative-grid,.initiative-grid,.ge-lounge-grid,.ge-planning-grid,.formgrid,.p26-form-grid,.p27-grid{grid-template-columns:1fr}.calendar-grid-v251{min-width:630px}.calendar-week-col-r2,.calendar-day-r2{min-height:85px}.lounge-master-code-v237{flex-basis:56px;min-height:56px;font-size:18px}}
